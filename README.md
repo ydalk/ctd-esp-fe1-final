@@ -41,7 +41,7 @@ git clone https://github.com/DH-Esp-Frontend/ctd-esp-fe1-final
 cd ctd-esp-fe1-final
 
 # elimina los links al repositorio de DH
-git remove rm origin
+git remote rm origin
 
 # Agrega el link al repositorio de tu cuenta de github, reemplaza <tuusuario> por tu cuenta
 git remote add origin https://github.com/<tuusuario>/ctd-esp-fe1-final
