@@ -14,4 +14,18 @@
   padding: 15px 20px; 
   border-radius: 3px;
   border: 1px solid #d0d0d0;
+  width: 80%;
+  margin-right: 5px;
+}
+
+.inputText{
+  display: flex;
+  flex-direction: row;
+}
+
+.clean{
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  align-self: center;
 }

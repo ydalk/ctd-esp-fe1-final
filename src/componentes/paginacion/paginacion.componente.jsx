@@ -1,4 +1,7 @@
+import { getAllPersonajes, getPage } from '../../redux/FiltroSlice';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
 import './paginacion.css';
+
 
 /**
  * Componente que contiene los botones para paginar
@@ -10,9 +13,27 @@ import './paginacion.css';
  */
 const Paginacion = () => {
 
+    const pagina = useAppSelector(state => state.personaje.page)
+    const dispatch = useAppDispatch()
+    
+    const anteriorPage = () => {
+        
+        let paginaActual = pagina - 1 
+        dispatch(getPage(paginaActual))   
+        dispatch(getAllPersonajes(paginaActual))
+    }
+    
+    const siguientePage = () => {
+        
+        let paginaActual = pagina + 1      
+        dispatch(getPage(paginaActual))   
+        dispatch(getAllPersonajes(paginaActual))    
+    }
+
+    
     return <div className="paginacion">
-        <button disabled={true} className={"primary"}>Anterior</button>
-        <button disabled={false} className={"primary"}>Siguiente</button>
+        <button disabled={pagina <= 1 ? true : false} className={"primary"} onClick={() => anteriorPage()} >Anterior</button>
+        <button disabled={false} className={"primary"} onClick={() => siguientePage()} >Siguiente</button>
     </div>
 }
 
