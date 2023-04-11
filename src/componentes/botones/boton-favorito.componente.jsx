@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './boton-favorito.css';
 
 
@@ -8,10 +9,12 @@ import './boton-favorito.css';
  *
  *
  * @returns un JSX element
+ * @param {boolean, function}
  */
-const BotonFavorito = ({esFavorito , onClick }) => {
+const BotonFavorito = ({esFavorito, onClick } ) => {
     
-        
+    esFavorito ? true : false
+
     const src = esFavorito ? "/imagenes/star-filled.png" : "/imagenes/star.png"
     return <div className="boton-favorito">
         <img src={src} alt={"favorito"} onClick={()=> onClick() }/>
@@ -19,3 +22,4 @@ const BotonFavorito = ({esFavorito , onClick }) => {
 }
 
 export default BotonFavorito;
+

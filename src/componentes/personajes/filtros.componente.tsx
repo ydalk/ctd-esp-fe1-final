@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './filtros.css';
 import { useAppDispatch } from '../../redux/hooks';
 import { getAllPersonajes, getPersonajeByName } from '../../redux/FiltroSlice';
+import PropTypes from "prop-types";
 
 const Filtros = () => {
 
@@ -29,3 +30,7 @@ const Filtros = () => {
 }
 
 export default Filtros;
+
+Filtros.prototypes = {
+    filtro: PropTypes.string.isRequired
+}
